@@ -1,0 +1,17 @@
+function confirm_registre(){
+		var Submit=$('#Submit').val();
+		var name=$('#name').val();
+		var user_name=$('#user_name').val();
+		var email=$('#email').val();
+		var password=$('#password').val();
+		alert(user_name);
+		//document.forme.action = "index.php?p=confirm_registre&Submit=" + Submit + "&name=" + name + "&user_name=" + user_name + "&email=" + email + "&password=" + password;
+		//document.forme.submit();
+		//alert(Submit+" "+name+" "+user_name+" "+email+" "+password);
+		$.post("components/users/handle.php?action=confirm_registre",
+		{Submit:Submit,name:name,user_name:user_name,email:email,password:password},
+		function(data){
+		alert(data);
+
+    });
+	}
